@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Story — Global AI Adoption in Education{% endblock %}
+
+{% block head_extra %}
+<!-- Tableau Embedding API v3 -->
+<script type="module" src="https://public.tableau.com/javascripts/api/tableau.embedding.3.latest.min.js"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container-fluid px-lg-4 py-4">
+  <!-- Clean Header -->
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <div>
+      <h1 class="h4 fw-bold text-dark mb-0">Global AI Adoption in Education — Data Story</h1>
+      <div class="text-muted small">Guided Analytical Narrative &amp; Key Findings</div>
+    </div>
+    {% if has_story_url %}
+    <div>
+      <a href="{{ TABLEAU_STORY_URL }}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-primary">
+        <i class="bi bi-box-arrow-up-right me-1"></i> Fullscreen on Tableau Public
+      </a>
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- Tableau Story Container -->
+  <div class="tableau-embed-container bg-white border rounded shadow-sm overflow-hidden" style="min-height: 85vh;">
+    {% if has_story_url %}
+      <!-- Live Embedded Tableau Story -->
+      <tableau-viz 
+        id="tableauStoryViz"
+        src="{{ TABLEAU_STORY_URL }}"
+        toolbar="bottom"
+        hide-tabs
+        style="width: 100%; height: 85vh; border: none;"
+      >
+      </tableau-viz>
+    {% else %}
+      <!-- Clean Placeholder when URL is not yet pasted in app.py -->
+      <div class="d-flex flex-column align-items-center justify-content-center p-5 text-center" style="min-height: 75vh;">
+        <div class="mb-3 text-primary">
+          <i class="bi bi-journal-text display-3"></i>
+        </div>
+        <h3 class="h5 fw-bold text-dark mb-2">Tableau Data Story</h3>
+        <p class="text-secondary small max-w-600 mb-0">
+          The interactive Tableau Story will display here once your published Tableau URL is inserted into <code>app.py</code>.
+        </p>
+      </div>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

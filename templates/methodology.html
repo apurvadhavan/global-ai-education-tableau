@@ -1,0 +1,208 @@
+{% extends "base.html" %}
+
+{% block title %}Methodology — Global AI Adoption in Education{% endblock %}
+
+{% block content %}
+<div class="container px-lg-4 py-5">
+  <!-- Header -->
+  <div class="max-w-800 mb-5">
+    <span class="badge bg-light text-primary border mb-2 text-uppercase fw-bold">Analytical Process</span>
+    <h1 class="display-6 fw-bold text-dark mb-2">Project Methodology &amp; Lifecycle</h1>
+    <p class="text-secondary lead fs-6">
+      A transparent, 10-phase data analytics lifecycle spanning data extraction, data cleansing, exploratory data analysis, Tableau visualization, and Flask web deployment.
+    </p>
+  </div>
+
+  <!-- 10-Step Visual Timeline -->
+  <div class="methodology-timeline">
+    <!-- Step 1 -->
+    <div class="timeline-step">
+      <div class="timeline-marker">1</div>
+      <div class="timeline-card">
+        <div class="d-flex justify-content-between align-items-center mb-1">
+          <div class="timeline-card-title">Data Collection &amp; Extraction</div>
+          <span class="badge bg-light text-dark border">Phase 1</span>
+        </div>
+        <p class="text-secondary small mb-2">
+          Extracted the raw survey and administrative benchmark dataset <code>data/raw/Global AI in Education.csv</code> containing 1,360 monthly country-level records across 10 sovereign nations from January 2015 to April 2026.
+        </p>
+        <div class="small text-muted">
+          <i class="bi bi-check-circle text-success me-1"></i> Dimensions: 10 countries, 6 continental regions, 136 consecutive monthly observations.
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="timeline-step">
+      <div class="timeline-marker">2</div>
+      <div class="timeline-card">
+        <div class="d-flex justify-content-between align-items-center mb-1">
+          <div class="timeline-card-title">Data Cleaning &amp; Schema Audit</div>
+          <span class="badge bg-light text-dark border">Phase 2</span>
+        </div>
+        <p class="text-secondary small mb-2">
+          Conducted full structural verification across all 16 columns. Identified that standard pandas CSV parsers mistakenly interpret the literal category <code>"None"</code> in <code>government_ai_policy</code> as null/NaN. We explicitly prevented this silent mutation, maintaining the integrity of all 442 "None" records.
+        </p>
+        <div class="small text-muted">
+          <i class="bi bi-check-circle text-success me-1"></i> Missing Values: 0 | Duplicate Rows: 0 | Value Bounds: All percentages validated within [0, 100].
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="timeline-step">
+      <div class="timeline-marker">3</div>
+      <div class="timeline-card">
+        <div class="d-flex justify-content-between align-items-center mb-1">
+          <div class="timeline-card-title">Data Preparation &amp; Feature Engineering</div>
+          <span class="badge bg-light text-dark border">Phase 3</span>
+        </div>
+        <p class="text-secondary small mb-2">
+          Engineered derived metrics and chronological timestamps required for high-performance Tableau calculations and multi-scale temporal modeling.
+        </p>
+        <div class="small text-muted">
+          <i class="bi bi-check-circle text-success me-1"></i> Engineered Fields: <code>date</code> (ISO-8601 YYYY-MM-01), <code>urban_rural_gap_pct</code> (Urban - Rural), <code>student_teacher_diff_pct</code> (Student - Teacher), <code>student_teacher_ratio</code>.
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="timeline-step">
+      <div class="timeline-marker">4</div>
+      <div class="timeline-card">
+        <div class="d-flex justify-content-between align-items-center mb-1">
+          <div class="timeline-card-title">Exploratory Data Analysis (EDA)</div>
+          <span class="badge bg-light text-dark border">Phase 4</span>
+        </div>
+        <p class="text-secondary small mb-2">
+          Implemented comprehensive 16-module exploratory analysis in <code>analysis/data_analysis.ipynb</code> analyzing descriptive statistics, correlations, temporal velocities, regional variances, and demographic gaps without fabricating assumptions.
+        </p>
+        <div class="small text-muted">
+          <i class="bi bi-check-circle text-success me-1"></i> Validated multi-year growth trajectory from 4.98% (2015) to 60.75% (2026).
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 5 -->
+    <div class="timeline-step">
+      <div class="timeline-marker">5</div>
+      <div class="timeline-card">
+        <div class="d-flex justify-content-between align-items-center mb-1">
+          <div class="timeline-card-title">Tableau Visualization Design</div>
+          <span class="badge bg-light text-dark border">Phase 5</span>
+        </div>
+        <p class="text-secondary small mb-2">
+          Designed 14 focused worksheets in Tableau addressing targeted analytical questions: choropleth adoption maps, dual-axis timelines, parity scatter plots, tool preference distributions, and policy boxplots.
+        </p>
+        <div class="small text-muted">
+          <i class="bi bi-check-circle text-success me-1"></i> Color-blind safe palettes, unified axes, and tooltip context formatting.
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 6 -->
+    <div class="timeline-step">
+      <div class="timeline-marker">6</div>
+      <div class="timeline-card">
+        <div class="d-flex justify-content-between align-items-center mb-1">
+          <div class="timeline-card-title">Executive Dashboard Assembly</div>
+          <span class="badge bg-light text-dark border">Phase 6</span>
+        </div>
+        <p class="text-secondary small mb-2">
+          Synthesized key worksheets into an interactive executive dashboard titled <code>GLOBAL AI ADOPTION IN EDUCATION</code> with 6 calculated KPI cards and global filters (Year, Month, Region, Country, Tool, Policy, Curriculum).
+        </p>
+        <div class="small text-muted">
+          <i class="bi bi-check-circle text-success me-1"></i> Filter actions set to apply across all worksheets using the data extract.
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 7 -->
+    <div class="timeline-step">
+      <div class="timeline-marker">7</div>
+      <div class="timeline-card">
+        <div class="d-flex justify-content-between align-items-center mb-1">
+          <div class="timeline-card-title">Tableau Story Construction</div>
+          <span class="badge bg-light text-dark border">Phase 7</span>
+        </div>
+        <p class="text-secondary small mb-2">
+          Constructed a 6-scene analytical narrative answering explicit questions from general global adoption to granular equity and accessibility dimensions, directly answering the 3 stakeholder personas.
+        </p>
+        <div class="small text-muted">
+          <i class="bi bi-check-circle text-success me-1"></i> Rigorous language standards: utilizing associational phrasing rather than unwarranted causal claims.
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 8 -->
+    <div class="timeline-step">
+      <div class="timeline-marker">8</div>
+      <div class="timeline-card">
+        <div class="d-flex justify-content-between align-items-center mb-1">
+          <div class="timeline-card-title">Performance Testing &amp; Verification</div>
+          <span class="badge bg-light text-dark border">Phase 8</span>
+        </div>
+        <p class="text-secondary small mb-2">
+          Executed query and rendering audits. Pre-calculated date and gap fields in Python to eliminate real-time calculation overhead in Tableau. Documented manual verification guidelines for Tableau Performance Recording.
+        </p>
+        <div class="small text-muted">
+          <i class="bi bi-check-circle text-success me-1"></i> Documentation provided in <code>documentation/performance_testing.md</code>.
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 9 -->
+    <div class="timeline-step">
+      <div class="timeline-marker">9</div>
+      <div class="timeline-card">
+        <div class="d-flex justify-content-between align-items-center mb-1">
+          <div class="timeline-card-title">Tableau Public Publishing</div>
+          <span class="badge bg-light text-dark border">Phase 9</span>
+        </div>
+        <p class="text-secondary small mb-2">
+          Saved workbook as a packaged extract (<code>tableau/Global_AI_Adoption.twbx</code>) and published to Tableau Public with client-side rendering enabled, retrieving live share links.
+        </p>
+        <div class="small text-muted">
+          <i class="bi bi-check-circle text-success me-1"></i> Publicly hostable, zero database dependencies, high availability.
+        </div>
+      </div>
+    </div>
+
+    <!-- Step 10 -->
+    <div class="timeline-step">
+      <div class="timeline-marker">10</div>
+      <div class="timeline-card">
+        <div class="d-flex justify-content-between align-items-center mb-1">
+          <div class="timeline-card-title">Flask Web Integration &amp; Deployment</div>
+          <span class="badge bg-light text-dark border">Phase 10</span>
+        </div>
+        <p class="text-secondary small mb-2">
+          Built a modular Python Flask application with 6 dedicated routes, Tableau Embedding API v3 wrappers, live URL preview testers, and portfolio-ready documentation.
+        </p>
+        <div class="small text-muted">
+          <i class="bi bi-check-circle text-success me-1"></i> Runs locally via <code>python app.py</code> at <code>http://127.0.0.1:5000/</code>.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary Card -->
+  <div class="analytics-card mt-5">
+    <h4 class="fw-bold text-dark mb-2">Methodological Summary &amp; Academic Integrity</h4>
+    <p class="text-secondary small mb-3">
+      Every visualization, summary metric, and analytical narrative point in this project originates directly from the supplied <code>Global AI in Education.csv</code> dataset. All data transformations are fully transparent, documented in code, and reproducible via <code>prepare_data.py</code>.
+    </p>
+    <div class="d-flex flex-wrap gap-2">
+      <a href="{{ url_for('insights') }}" class="btn btn-sm btn-primary">
+        <i class="bi bi-lightbulb me-1"></i> Read Key Insights
+      </a>
+      <a href="{{ url_for('dashboard') }}" class="btn btn-sm btn-outline-secondary">
+        <i class="bi bi-speedometer2 me-1"></i> Open Dashboard
+      </a>
+      <a href="{{ url_for('story') }}" class="btn btn-sm btn-outline-secondary">
+        <i class="bi bi-journal-text me-1"></i> Open Story
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}

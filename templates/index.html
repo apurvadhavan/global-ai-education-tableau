@@ -1,0 +1,325 @@
+{% extends "base.html" %}
+
+{% block title %}Home — Global AI Adoption in Education{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section">
+  <div class="container px-lg-4">
+    <div class="row align-items-center">
+      <div class="col-lg-9">
+        <div class="hero-pill">
+          <i class="bi bi-bar-chart-fill"></i> Data Analytics &amp; Tableau Capstone
+        </div>
+        <h1 class="hero-title">
+          Global AI Adoption in Education
+        </h1>
+        <p class="hero-subtitle">
+          A Comprehensive Global Analysis of AI Adoption, Infrastructure, Policy and Educational Trends
+        </p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="{{ url_for('dashboard') }}" class="btn-analytics-primary">
+            <i class="bi bi-speedometer2"></i> Explore Dashboard
+          </a>
+          <a href="{{ url_for('story') }}" class="btn-analytics-secondary">
+            <i class="bi bi-journal-text"></i> Explore Data Story
+          </a>
+          <a href="{{ url_for('insights') }}" class="btn-analytics-secondary">
+            <i class="bi bi-lightbulb"></i> View Insights
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Executive KPI Summary Cards -->
+<section class="py-4 border-bottom bg-white">
+  <div class="container px-lg-4">
+    <div class="row g-3">
+      <div class="col-xl-2 col-md-4 col-sm-6">
+        <div class="kpi-card">
+          <div class="kpi-label">Avg Student AI Usage</div>
+          <div class="kpi-value">{{ kpis.avg_student_ai }}<span class="kpi-unit">%</span></div>
+          <div class="kpi-subtext">
+            <i class="bi bi-arrow-up-right text-primary"></i> 4.98% (2015) ➔ 60.75% (2026)
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-2 col-md-4 col-sm-6">
+        <div class="kpi-card teal-accent">
+          <div class="kpi-label">Avg Teacher AI Usage</div>
+          <div class="kpi-value">{{ kpis.avg_teacher_ai }}<span class="kpi-unit">%</span></div>
+          <div class="kpi-subtext">
+            <i class="bi bi-dash text-secondary"></i> Lagging students by 1.08%
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-2 col-md-4 col-sm-6">
+        <div class="kpi-card emerald-accent">
+          <div class="kpi-label">Avg School Adoption</div>
+          <div class="kpi-value">{{ kpis.avg_school_ai }}<span class="kpi-unit">%</span></div>
+          <div class="kpi-subtext">
+            <i class="bi bi-building text-success"></i> Institutional uptake rate
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-2 col-md-4 col-sm-6">
+        <div class="kpi-card amber-accent">
+          <div class="kpi-label">Avg Daily AI Usage</div>
+          <div class="kpi-value">{{ kpis.avg_daily_min }}<span class="kpi-unit">min</span></div>
+          <div class="kpi-subtext">
+            <i class="bi bi-clock text-warning"></i> Range: 5 min to 60 min
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-2 col-md-4 col-sm-6">
+        <div class="kpi-card">
+          <div class="kpi-label">Avg Internet Pen.</div>
+          <div class="kpi-value">{{ kpis.avg_internet }}<span class="kpi-unit">%</span></div>
+          <div class="kpi-subtext">
+            <i class="bi bi-globe text-info"></i> Range: 42% to 96%
+          </div>
+        </div>
+      </div>
+
+      <div class="col-xl-2 col-md-4 col-sm-6">
+        <div class="kpi-card rose-accent">
+          <div class="kpi-label">Avg Education Index</div>
+          <div class="kpi-value">{{ kpis.avg_education_index }}</div>
+          <div class="kpi-subtext">
+            <i class="bi bi-award text-danger"></i> Scale 0.0 to 1.0 (UNDP)
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Project Overview & Foundational Dimensions -->
+<section class="py-5">
+  <div class="container px-lg-4">
+    <div class="row g-4 align-items-stretch">
+      <div class="col-lg-6">
+        <div class="analytics-card h-100">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="badge bg-primary text-white">Project Scope</span>
+            <span class="text-muted small">Analytical Foundation</span>
+          </div>
+          <h3 class="h4 fw-bold text-dark mb-3">What This Project Analyzes</h3>
+          <p class="text-secondary mb-3">
+            This study investigates the multi-dimensional integration of Artificial Intelligence within primary, secondary, and higher education across <strong>10 sovereign nations</strong> over a 12-year longitudinal span (2015–2026).
+          </p>
+          <p class="text-secondary mb-3">
+            Rather than relying on speculative forecasts or anecdotal claims, this project conducts a systematic evaluation of <strong>1,360 empirical monthly records</strong> covering:
+          </p>
+          <ul class="text-secondary small mb-0 ps-3">
+            <li class="mb-2"><strong>Adoption Velocity:</strong> Temporal progression of student, teacher, and school adoption rates.</li>
+            <li class="mb-2"><strong>Infrastructure Intersections:</strong> How national internet penetration and education index correlate with institutional uptake.</li>
+            <li class="mb-2"><strong>The Equity Gap:</strong> Structural disparities between urban and rural school districts (11.97% gap) and gender disparities (5.41%).</li>
+            <li class="mb-2"><strong>Governance &amp; Policy:</strong> Differences across active, draft, and absent government AI policy frameworks.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="analytics-card h-100">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <span class="badge bg-secondary text-white">Why It Matters</span>
+            <span class="text-muted small">Institutional &amp; Global Impact</span>
+          </div>
+          <h3 class="h4 fw-bold text-dark mb-3">Why AI Adoption in Education Matters</h3>
+          <p class="text-secondary mb-3">
+            The integration of AI into pedagogical systems fundamentally reshapes personalized learning, educator workload, and student evaluation. Understanding adoption dynamics is urgent because:
+          </p>
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <div class="p-3 bg-light rounded border h-100">
+                <div class="fw-bold text-dark mb-1 small"><i class="bi bi-mortarboard text-primary me-1"></i> Classroom Friction</div>
+                <div class="text-muted small">Students adopt generative tools faster than formal curricula adapt, creating policy vacuums in academic integrity.</div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="p-3 bg-light rounded border h-100">
+                <div class="fw-bold text-dark mb-1 small"><i class="bi bi-geo-alt text-danger me-1"></i> Widening Divides</div>
+                <div class="text-muted small">Rural school districts risk falling behind urban technology hubs unless connectivity and digital training are equitably deployed.</div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="p-3 bg-light rounded border h-100">
+                <div class="fw-bold text-dark mb-1 small"><i class="bi bi-cpu text-info me-1"></i> Platform Selection</div>
+                <div class="text-muted small">Institutions must balance specialized pedagogical platforms (Khanmigo) against general-purpose LLMs (ChatGPT, Copilot, Gemini).</div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="p-3 bg-light rounded border h-100">
+                <div class="fw-bold text-dark mb-1 small"><i class="bi bi-shield-check text-success me-1"></i> Policy Formalization</div>
+                <div class="text-muted small">Active governance safeguards data privacy, pupil safety, and instructional quality across classrooms.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stakeholder Scenarios -->
+<section class="py-5 bg-white border-top border-bottom">
+  <div class="container px-lg-4">
+    <div class="text-center max-w-700 mx-auto mb-4">
+      <span class="badge bg-light text-primary border mb-2 text-uppercase fw-bold">Stakeholder Perspectives</span>
+      <h2 class="section-title">Three Real-World Analytical Scenarios</h2>
+      <p class="section-subtitle">
+        The research questions, dashboard filters, and story scenes are structured to empower three specific educational decision-makers.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Scenario 1 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="persona-card">
+          <span class="persona-badge badge-chen">Scenario 1 — EdTech Leadership</span>
+          <div class="persona-name">Dr. Sarah Chen</div>
+          <div class="persona-title">Educational Technology Director</div>
+          <p class="small text-secondary mb-2">
+            Responsible for district-wide and national educational technology deployments, teacher training allocations, and AI policy compliance.
+          </p>
+          <div class="fw-bold text-dark small mt-2">Key Analytical Inquiries:</div>
+          <ul class="persona-inquiry-list">
+            <li>How does regional adoption compare across international benchmarks?</li>
+            <li>What is the adoption gap between students and classroom teachers?</li>
+            <li>Does formal government policy and curriculum adoption correlate with higher institutional uptake?</li>
+          </ul>
+          <div class="mt-3 pt-2 border-top">
+            <a href="{{ url_for('story') }}#scene3" class="btn btn-sm btn-outline-primary w-100">
+              Explore Scenario 1 in Story
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scenario 2 -->
+      <div class="col-lg-4 col-md-6">
+        <div class="persona-card">
+          <span class="persona-badge badge-williams">Scenario 2 — Product &amp; Market</span>
+          <div class="persona-name">Marcus Williams</div>
+          <div class="persona-title">EdTech Entrepreneur &amp; Product Manager</div>
+          <p class="small text-secondary mb-2">
+            Evaluating AI tool adoption patterns, competitive market positioning, and underserved demographic segments.
+          </p>
+          <div class="fw-bold text-dark small mt-2">Key Analytical Inquiries:</div>
+          <ul class="persona-inquiry-list">
+            <li>Which AI tools lead classroom and home study across specific continents?</li>
+            <li>What are the temporal adoption shifts among the 4 primary tools?</li>
+            <li>Where are the greatest untapped demographic segments (e.g. rural education)?</li>
+          </ul>
+          <div class="mt-3 pt-2 border-top">
+            <a href="{{ url_for('story') }}#scene4" class="btn btn-sm btn-outline-primary w-100">
+              Explore Scenario 2 in Story
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scenario 3 -->
+      <div class="col-lg-4 col-md-12">
+        <div class="persona-card">
+          <span class="persona-badge badge-rodriguez">Scenario 3 — Academic Research</span>
+          <div class="persona-name">Prof. Elena Rodriguez</div>
+          <div class="persona-title">AI in Education Academic Researcher</div>
+          <p class="small text-secondary mb-2">
+            Investigating statistical relationships between macro infrastructure, policy maturity, gender parity, and educational outcomes.
+          </p>
+          <div class="fw-bold text-dark small mt-2">Key Analytical Inquiries:</div>
+          <ul class="persona-inquiry-list">
+            <li>Does national internet penetration correlate with active user adoption?</li>
+            <li>How does the United Nations Education Index associate with usage?</li>
+            <li>What are the empirical magnitudes of urban-rural (11.97%) and gender gaps (5.41%)?</li>
+          </ul>
+          <div class="mt-3 pt-2 border-top">
+            <a href="{{ url_for('story') }}#scene5" class="btn btn-sm btn-outline-primary w-100">
+              Explore Scenario 3 in Story
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Country-Level Empirical Baseline Table -->
+<section class="py-5">
+  <div class="container px-lg-4">
+    <div class="d-flex flex-wrap justify-content-between align-items-end mb-3">
+      <div>
+        <h2 class="section-title mb-1">Geographic Coverage &amp; Baseline Metrics</h2>
+        <p class="text-secondary small mb-0">10 countries analyzed across 136 consecutive monthly observations each (Jan 2015 – Apr 2026).</p>
+      </div>
+      <div>
+        <a href="{{ url_for('dashboard') }}" class="btn btn-sm btn-outline-primary">
+          <i class="bi bi-map me-1"></i> View Interactive Choropleth
+        </a>
+      </div>
+    </div>
+
+    <div class="analytics-card p-0 overflow-hidden">
+      <div class="table-responsive">
+        <table class="custom-table mb-0">
+          <thead>
+            <tr>
+              <th>Country</th>
+              <th>Region</th>
+              <th>Avg Student AI</th>
+              <th>Avg Teacher AI</th>
+              <th>Avg School Adoption</th>
+              <th>Internet Pen.</th>
+              <th>Education Index</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for c in countries %}
+            <tr>
+              <td class="fw-bold text-dark">{{ c.country }}</td>
+              <td><span class="badge bg-light text-dark border">{{ c.region }}</span></td>
+              <td class="fw-semibold text-primary">{{ c.student_ai_usage_pct }}%</td>
+              <td>{{ c.teacher_ai_usage_pct }}%</td>
+              <td>{{ c.schools_ai_adoption_pct }}%</td>
+              <td>{{ c.internet_penetration_pct }}%</td>
+              <td>{{ c.education_index }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action Banner -->
+<section class="py-5 bg-white border-top">
+  <div class="container px-lg-4 text-center">
+    <div class="p-4 p-lg-5 rounded-3 bg-light border">
+      <h3 class="fw-bold text-dark mb-2">Explore the Interactive Tableau Analysis</h3>
+      <p class="text-secondary max-w-700 mx-auto mb-4">
+        Interact with the published Tableau Dashboard featuring KPI metrics and multi-dimensional filters, or explore the guided analytical Tableau Story.
+      </p>
+      <div class="d-flex flex-wrap justify-content-center gap-3">
+        <a href="{{ url_for('dashboard') }}" class="btn-analytics-primary">
+          <i class="bi bi-speedometer2"></i> Open Dashboard
+        </a>
+        <a href="{{ url_for('story') }}" class="btn-analytics-secondary">
+          <i class="bi bi-journal-text"></i> Open Data Story
+        </a>
+        <a href="{{ url_for('insights') }}" class="btn-analytics-secondary">
+          <i class="bi bi-lightbulb"></i> View Insights
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

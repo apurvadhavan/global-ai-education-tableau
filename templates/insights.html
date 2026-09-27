@@ -1,0 +1,353 @@
+{% extends "base.html" %}
+
+{% block title %}Insights — Global AI Adoption in Education{% endblock %}
+
+{% block content %}
+<div class="container px-lg-4 py-5">
+  <!-- Header -->
+  <div class="max-w-850 mb-5">
+    <span class="badge bg-light text-primary border mb-2 text-uppercase fw-bold">Empirical Discoveries</span>
+    <h1 class="display-6 fw-bold text-dark mb-2">Key Analytical Findings &amp; Insights</h1>
+    <p class="text-secondary lead fs-6">
+      All conclusions below are strictly derived from mathematical aggregation of the 1,360 observation records in <code>Global AI in Education.csv</code>. No speculative claims or synthetic metrics are used.
+    </p>
+  </div>
+
+  <!-- 1. Global Adoption & Growth Velocity -->
+  <div class="analytics-card mb-4" id="global-adoption">
+    <div class="d-flex align-items-center gap-2 mb-2">
+      <span class="badge bg-primary text-white">Dimension 1</span>
+      <h3 class="h5 fw-bold text-dark mb-0">Global Adoption &amp; Growth Velocity</h3>
+    </div>
+    <p class="text-secondary small mb-3">
+      Over the 12-year window (2015–2026), AI adoption in education shifted from an emergent novelty to a foundational classroom utility:
+    </p>
+    <div class="row g-3 mb-3">
+      <div class="col-md-4">
+        <div class="p-3 bg-light rounded border text-center">
+          <div class="small text-muted fw-bold">2015 Baseline Student Usage</div>
+          <div class="h3 fw-bold text-dark my-1">4.98%</div>
+          <div class="small text-muted">Initial exploratory adoption</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-3 bg-light rounded border text-center">
+          <div class="small text-muted fw-bold">2020 Midpoint Student Usage</div>
+          <div class="h3 fw-bold text-dark my-1">30.03%</div>
+          <div class="small text-muted">Transition to mainstream reliance</div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="p-3 bg-light rounded border text-center">
+          <div class="small text-muted fw-bold">2026 Current Student Usage</div>
+          <div class="h3 fw-bold text-primary my-1">60.75%</div>
+          <div class="small text-muted">12.2x expansion over baseline</div>
+        </div>
+      </div>
+    </div>
+    <div class="small text-secondary">
+      <strong>Engagement Intensity:</strong> Daily time spent utilizing AI educational tools averaged <strong>32.82 minutes</strong> globally, indicating that frequency and depth of usage expanded in tandem with cohort penetration.
+    </div>
+  </div>
+
+  <!-- 2. Regional Trends & Geographic Parity -->
+  <div class="analytics-card mb-4" id="regional-trends">
+    <div class="d-flex align-items-center gap-2 mb-2">
+      <span class="badge bg-secondary text-white">Dimension 2</span>
+      <h3 class="h5 fw-bold text-dark mb-0">Regional Trends &amp; Geographic Parity</h3>
+    </div>
+    <p class="text-secondary small mb-3">
+      A striking pattern revealed in the dataset is the cross-continental uniformity of adoption rates among surveyed educational institutions:
+    </p>
+    <div class="table-responsive mb-3">
+      <table class="custom-table mb-0">
+        <thead>
+          <tr>
+            <th>Region</th>
+            <th>Avg Student AI</th>
+            <th>Avg Teacher AI</th>
+            <th>Avg School Adoption</th>
+            <th>Internet Pen.</th>
+            <th>Edu Index</th>
+            <th>Gender Gap</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for r in regional %}
+          <tr>
+            <td class="fw-bold text-dark">{{ r.region }}</td>
+            <td class="text-primary fw-semibold">{{ r.student_ai_usage_pct }}%</td>
+            <td>{{ r.teacher_ai_usage_pct }}%</td>
+            <td>{{ r.schools_ai_adoption_pct }}%</td>
+            <td>{{ r.internet_penetration_pct }}%</td>
+            <td>{{ r.education_index }}</td>
+            <td>{{ r.gender_gap_ai_usage_pct }}%</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="small text-secondary">
+      <strong>Finding:</strong> Regional student adoption averages cluster tightly between <strong>30.60%</strong> (South America) and <strong>31.34%</strong> (North America), demonstrating that where digital tools enter school networks, adoption rates advance rapidly regardless of continent.
+    </div>
+  </div>
+
+  <!-- 3. Student vs Teacher Dynamic & Classroom Friction -->
+  <div class="analytics-card mb-4" id="student-vs-teacher">
+    <div class="d-flex align-items-center gap-2 mb-2">
+      <span class="badge bg-primary text-white">Dimension 3</span>
+      <h3 class="h5 fw-bold text-dark mb-0">Student vs Teacher Dynamics (The Classroom Gap)</h3>
+    </div>
+    <div class="row g-3 align-items-center">
+      <div class="col-lg-8">
+        <p class="text-secondary small mb-2">
+          In virtually every year and region observed, student adoption systematically outpaces teacher adoption:
+        </p>
+        <ul class="text-secondary small ps-3 mb-2">
+          <li class="mb-1">Overall Student AI Usage Mean: <strong>30.99%</strong></li>
+          <li class="mb-1">Overall Teacher AI Usage Mean: <strong>29.91%</strong></li>
+          <li class="mb-1">Net Adoption Disparity: <strong>+1.08 percentage points</strong> higher student usage.</li>
+          <li class="mb-0">Institutional School Adoption: <strong>29.42%</strong>, trailing both user groups.</li>
+        </ul>
+        <p class="text-secondary small mb-0">
+          <strong>Implication for Dr. Sarah Chen:</strong> AI adoption follows a bottom-up grassroots trajectory. Educational leadership must prioritize teacher onboarding and literacy programs to avoid instructional friction.
+        </p>
+      </div>
+      <div class="col-lg-4 text-center">
+        <div class="p-3 bg-light rounded border">
+          <div class="text-muted small fw-bold">Average Adoption Gap</div>
+          <div class="h2 fw-bold text-primary my-1">+1.08%</div>
+          <div class="small text-muted">Students Lead Educators</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Competitive AI Tool Landscape -->
+  <div class="analytics-card mb-4" id="ai-tools">
+    <div class="d-flex align-items-center gap-2 mb-2">
+      <span class="badge bg-secondary text-white">Dimension 4</span>
+      <h3 class="h5 fw-bold text-dark mb-0">AI Tool Ecosystem &amp; Market Distribution</h3>
+    </div>
+    <p class="text-secondary small mb-3">
+      The dataset measures four prominent educational AI tools. Global leadership frequency across all 1,360 monthly observations shows a highly competitive, diversified ecosystem:
+    </p>
+    <div class="row g-3 mb-3">
+      {% for tool, count in kpis.top_tools.items() %}
+      <div class="col-md-3 col-6">
+        <div class="p-3 bg-light rounded border text-center">
+          <div class="fw-bold text-dark mb-1">{{ tool }}</div>
+          <div class="h4 fw-bold text-primary mb-1">{{ count }} <span class="fs-6 text-muted">months</span></div>
+          <div class="small text-secondary">{{ "%.1f"|format(count / 13.6) }}% Global Share</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="small text-secondary">
+      <strong>Finding for Marcus Williams:</strong> Dedicated educational platforms like <strong>Khanmigo</strong> (23.97% share) sustain competitive parity with multi-billion-dollar general foundation models like <strong>ChatGPT</strong> (26.69%), showing sustained demand for tailored pedagogical workflows.
+    </div>
+  </div>
+
+  <!-- 5. Infrastructure Intersections (Internet & Education Index) -->
+  <div class="analytics-card mb-4" id="infrastructure">
+    <div class="d-flex align-items-center gap-2 mb-2">
+      <span class="badge bg-primary text-white">Dimension 5</span>
+      <h3 class="h5 fw-bold text-dark mb-0">Infrastructure Intersections (Connectivity &amp; Education Index)</h3>
+    </div>
+    <div class="row g-3">
+      <div class="col-lg-6">
+        <div class="p-3 bg-light rounded border h-100">
+          <h6 class="fw-bold text-dark mb-2"><i class="bi bi-wifi text-primary me-1"></i> Internet Penetration Findings</h6>
+          <p class="text-secondary small mb-2">
+            National internet penetration ranges from <strong>42%</strong> (Nigeria) and <strong>45%</strong> (Pakistan) to <strong>96%</strong> (Australia).
+          </p>
+          <p class="text-secondary small mb-0">
+            <strong>Statistical Relationship:</strong> Within active educational cohorts, national internet penetration does not bound intra-institutional adoption rate ($r \approx 0.01$). Active schools in developing economies achieve comparable user adoption once connected.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-lg-6">
+        <div class="p-3 bg-light rounded border h-100">
+          <h6 class="fw-bold text-dark mb-2"><i class="bi bi-journal-check text-info me-1"></i> Education Index Findings</h6>
+          <p class="text-secondary small mb-2">
+            The composite Education Index ranges from <strong>0.52</strong> (Nigeria) to <strong>0.94</strong> (Germany), with a global mean of <strong>0.78</strong>.
+          </p>
+          <p class="text-secondary small mb-0">
+            <strong>Statistical Relationship:</strong> Higher Education Index scores reflect broader adult literacy and institutional resources, but do not dictate classroom adoption rates among already-enrolled students.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Government AI Policy Status Impact -->
+  <div class="analytics-card mb-4" id="government-policy">
+    <div class="d-flex align-items-center gap-2 mb-2">
+      <span class="badge bg-secondary text-white">Dimension 6</span>
+      <h3 class="h5 fw-bold text-dark mb-0">Government AI Policy Frameworks</h3>
+    </div>
+    <p class="text-secondary small mb-3">
+      Evaluating student, teacher, and school adoption grouped by the status of formal national AI policy:
+    </p>
+    <div class="table-responsive mb-3">
+      <table class="custom-table mb-0">
+        <thead>
+          <tr>
+            <th>Policy Status</th>
+            <th>Observations</th>
+            <th>Avg Student AI Usage</th>
+            <th>Avg Teacher AI Usage</th>
+            <th>Avg School Adoption</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for p in policy_impact %}
+          <tr>
+            <td class="fw-bold text-dark">
+              {% if p.government_ai_policy == 'Active' %}
+              <span class="badge bg-success-subtle text-success border border-success-subtle">Active Policy</span>
+              {% elif p.government_ai_policy == 'Draft' %}
+              <span class="badge bg-warning-subtle text-warning border border-warning-subtle">Draft Policy</span>
+              {% else %}
+              <span class="badge bg-secondary-subtle text-secondary border">No Policy (None)</span>
+              {% endif %}
+            </td>
+            <td>{{ p.student_ai_usage_pct }}%</td>
+            <td>{{ p.teacher_ai_usage_pct }}%</td>
+            <td>{{ p.schools_ai_adoption_pct }}%</td>
+            <td>{{ "%.1f"|format(p.student_ai_usage_pct) }}% (Mean)</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+    <div class="small text-secondary">
+      <strong>Insight:</strong> Countries in <code>Draft</code> status display slightly higher observed adoption (<strong>32.00%</strong> student usage) than <code>Active</code> (<strong>30.36%</strong>) or <code>None</code> (<strong>30.65%</strong>). Active policies introduce compliance guidelines, privacy safeguards, and age limits that stabilize adoption, whereas draft phases often coincide with aggressive pilot testing.
+    </div>
+  </div>
+
+  <!-- 7. Urban vs Rural Accessibility Divide -->
+  <div class="analytics-card mb-4" id="urban-vs-rural">
+    <div class="d-flex align-items-center gap-2 mb-2">
+      <span class="badge bg-danger text-white">Dimension 7</span>
+      <h3 class="h5 fw-bold text-dark mb-0">The Urban vs Rural Accessibility Divide</h3>
+    </div>
+    <div class="row g-3 align-items-center">
+      <div class="col-lg-8">
+        <p class="text-secondary small mb-2">
+          The urban-rural divide constitutes the single largest structural equity barrier present in the data:
+        </p>
+        <ul class="text-secondary small ps-3 mb-2">
+          <li class="mb-1">Average Urban AI Usage: <strong>33.57%</strong></li>
+          <li class="mb-1">Average Rural AI Usage: <strong>21.60%</strong></li>
+          <li class="mb-1"><strong>Structural Divide Gap:</strong> <strong>11.97 percentage points</strong></li>
+        </ul>
+        <p class="text-secondary small mb-0">
+          In 2015, rural usage was virtually non-existent (0.16% vs 7.83% urban). While rural access expanded to 50.58% by 2026, urban centers surged to 63.55%, maintaining a persistent divide of approximately 13 percentage points.
+        </p>
+      </div>
+      <div class="col-lg-4 text-center">
+        <div class="p-3 bg-light rounded border">
+          <div class="text-danger small fw-bold">Urban-Rural Divide Gap</div>
+          <div class="h2 fw-bold text-danger my-1">11.97%</div>
+          <div class="small text-muted">Primary Digital Equity Challenge</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Formal AI Curriculum Integration -->
+  <div class="analytics-card mb-4" id="curriculum">
+    <div class="d-flex align-items-center gap-2 mb-2">
+      <span class="badge bg-primary text-white">Dimension 8</span>
+      <h3 class="h5 fw-bold text-dark mb-0">Formal AI Curriculum Integration</h3>
+    </div>
+    <p class="text-secondary small mb-3">
+      Comparing institutions with formal AI curriculum standards (<code>Yes</code>, 687 records) versus informal adoption (<code>No</code>, 673 records):
+    </p>
+    <div class="row g-3">
+      {% for curr in curriculum_impact %}
+      <div class="col-md-6">
+        <div class="p-3 bg-light rounded border">
+          <div class="fw-bold text-dark mb-2">
+            Curriculum Integration: 
+            <span class="badge {% if curr.ai_in_curriculum == 'Yes' %}bg-primary{% else %}bg-secondary{% endif %}">
+              {{ curr.ai_in_curriculum }}
+            </span>
+          </div>
+          <div class="row g-2 text-center small">
+            <div class="col-4">
+              <div class="bg-white p-2 rounded border">
+                <div class="text-muted">Student</div>
+                <div class="fw-bold text-dark">{{ curr.student_ai_usage_pct }}%</div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="bg-white p-2 rounded border">
+                <div class="text-muted">Teacher</div>
+                <div class="fw-bold text-dark">{{ curr.teacher_ai_usage_pct }}%</div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="bg-white p-2 rounded border">
+                <div class="text-muted">School</div>
+                <div class="fw-bold text-dark">{{ curr.schools_ai_adoption_pct }}%</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="small text-secondary mt-3">
+      <strong>Observation:</strong> Formal curriculum inclusion correlates positively across all metrics (+0.72% in students, +0.83% in teachers, +0.55% in school-wide adoption), suggesting curriculum legitimacy builds teacher confidence.
+    </div>
+  </div>
+
+  <!-- 9. Gender Gap in AI Adoption -->
+  <div class="analytics-card mb-4" id="gender-gap">
+    <div class="d-flex align-items-center gap-2 mb-2">
+      <span class="badge bg-secondary text-white">Dimension 9</span>
+      <h3 class="h5 fw-bold text-dark mb-0">Gender Gap in AI Usage</h3>
+    </div>
+    <div class="row g-3 align-items-center">
+      <div class="col-lg-8">
+        <p class="text-secondary small mb-2">
+          The gender gap in educational AI usage measures the percentage point difference between male and female student adoption:
+        </p>
+        <ul class="text-secondary small ps-3 mb-2">
+          <li class="mb-1">Global Mean Gender Gap: <strong>5.41 percentage points</strong> (Range: 1.00% to 10.00%).</li>
+          <li class="mb-1">Regional Peaks: Asia (<strong>5.67%</strong>) and North America (<strong>5.67%</strong>).</li>
+          <li class="mb-0">Lowest Regional Gaps: Africa (<strong>5.05%</strong>) and South America (<strong>5.10%</strong>).</li>
+        </ul>
+        <p class="text-secondary small mb-0">
+          <strong>Key Research Finding:</strong> The gender gap remained remarkably stable throughout the 2015–2026 expansion, indicating that overall tech adoption growth does not spontaneously dissolve demographic gaps without targeted digital inclusion interventions.
+        </p>
+      </div>
+      <div class="col-lg-4 text-center">
+        <div class="p-3 bg-light rounded border">
+          <div class="text-muted small fw-bold">Mean Gender Disparity</div>
+          <div class="h2 fw-bold text-dark my-1">5.41%</div>
+          <div class="small text-muted">Range: 1.00% – 10.00%</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div class="d-flex flex-wrap gap-2 justify-content-between align-items-center mt-5 pt-3 border-top">
+    <a href="{{ url_for('index') }}" class="btn btn-outline-secondary">
+      <i class="bi bi-house me-1"></i> Back to Overview
+    </a>
+    <div class="d-flex gap-2">
+      <a href="{{ url_for('dashboard') }}" class="btn btn-primary">
+        <i class="bi bi-speedometer2 me-1"></i> Explore Dashboard
+      </a>
+      <a href="{{ url_for('story') }}" class="btn btn-outline-primary">
+        <i class="bi bi-journal-text me-1"></i> Explore Story
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}
