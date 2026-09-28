@@ -15,12 +15,12 @@ app = Flask(__name__)
 
 TABLEAU_DASHBOARD_URL = os.environ.get(
     "TABLEAU_DASHBOARD_URL",
-    "PASTE_TABLEAU_DASHBOARD_URL_HERE"
+    "https://public.tableau.com/views/Global_AI_Education/Dashboard2"
 )
 
 TABLEAU_STORY_URL = os.environ.get(
     "TABLEAU_STORY_URL",
-    "PASTE_TABLEAU_STORY_URL_HERE"
+    "https://public.tableau.com/views/Global_AI_Education/Story1"
 )
 
 # ==============================================================================
